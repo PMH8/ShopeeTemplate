@@ -250,6 +250,7 @@
 .auth-form__container {
     padding: 0 32px;
     box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
 .auth-form__header {
@@ -303,3 +304,28 @@
 .auth-form__controls{
     margin-top: 80px;
 }
+.auth-form__controls{
+    display: flex;
+    justify-content: flex-end;
+}
+.auth-form__controls-back{
+    margin-right: 8px;
+}
+.auth-form__socials{
+    background-color: #f5f5f5;
+    padding: 12px 32px;
+    display: flex;
+    justify-content: space-between;
+}
+/* .auth-form__socials-facebook,
+.auth-form__socials-google{
+    color: var(--white-color);
+} */
+.auth-form__socials-facebook{
+    background-color: #3A5A98;
+    color: var(--white-color);
+}
+.auth-form__socials-google{
+
+}
+
