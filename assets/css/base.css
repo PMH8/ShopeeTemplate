@@ -4,6 +4,9 @@
     --black-color: #000;
     --text-color: #333;
     --border-color: #afaeae;
+    --navbar-height:34px;
+    --header-height:120px;
+    --header-with-search-height:calc(var(--header-height) - var(--navbar-height))
 }
 
 * {
@@ -32,6 +35,28 @@ html {
 }
 
 /* Modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(var(--growth-to));
+    }
+}
+
+
 .modal {
     position: fixed;
     top: 0;
@@ -39,6 +64,7 @@ html {
     bottom: 0;
     left: 0;
     display: flex;
+    animation: fadeIn linear 0.06s;
 }
 
 .modal__overlay {
@@ -49,11 +75,14 @@ html {
 }
 
 .modal__body {
+    --growth-from:80%;
+    --growth-to:100%;
     background-color: var(--white-color);
     width: 500px;
     margin: auto;
     z-index: 2;
     border-radius: 5px;
+    animation: growth linear 0.06s;
 }
 
 /* Button style */
@@ -65,10 +94,11 @@ html {
     border-radius: 2px;
     font-size: 1.3rem;
     line-height: 36px;
-    padding: 0;
-    
+    padding: 0 8px;
+
 }
-.btn.btn--normal:hover{
+
+.btn.btn--normal:hover {
     background-color: rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
@@ -76,10 +106,16 @@ html {
 .btn.btn-primary {
     color: var(--white-color);
     background-color: var(--primary-color);
-    
+
 }
-.btn.btn-disibaled{
-    color:#949494 ;
+
+.btn.btn-disibaled {
+    color: #949494;
     cursor: default;
     background-color: #c3c3c3;
+}
+
+.btn--with-icon {
+    display: flex;
+    align-items: center;
 }

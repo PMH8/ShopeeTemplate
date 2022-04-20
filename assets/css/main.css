@@ -1,5 +1,5 @@
 .header {
-    height: 120px;
+    height: var(--header-height);
     background-image: linear-gradient(0, #fe6433, #f53e2d)
 }
 
@@ -10,7 +10,8 @@
 
 .header__navbar-list {
     list-style: none;
-
+    padding-left: 0;
+    margin: 4px 0 0 0;
 }
 
 .header__navbar-item {
@@ -247,8 +248,12 @@
 }
 
 /* Authen Modal */
+.auth-form{
+    border-radius: 5px;
+    overflow: hidden;
+}
 .auth-form__container {
-    padding: 0 32px;
+    padding: 10px 32px;
     box-sizing: border-box;
     margin-bottom: 15px;
 }
@@ -257,6 +262,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    
 }
 
 .auth-form__heading {
@@ -271,9 +278,9 @@
 
 }
 
-.auth-form__form {
-    /* width: 500px; */
-}
+/* .auth-form__form {
+    border-radius: 3px;
+} */
 
 .auth-form__input {
     width: 100%;
@@ -316,6 +323,7 @@
     padding: 12px 32px;
     display: flex;
     justify-content: space-between;
+   
 }
 /* .auth-form__socials-facebook,
 .auth-form__socials-google{
@@ -324,8 +332,61 @@
 .auth-form__socials-facebook{
     background-color: #3A5A98;
     color: var(--white-color);
+    font-size: 13px;
 }
 .auth-form__socials-google{
-
+    background-color: var(--white-color);
+    color: var(--text-color);
+    font-size: 13px;
+    
+ 
 }
-
+.auth-form__socials-title{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.auth-form__help{
+    display: flex;
+    justify-content: flex-end;
+}
+.auth-form__help-link{
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+.auth-form__help-forgot{
+    color: var(--primary-color);
+}
+.auth-form__help-separate{
+    display: block;
+    height: 18px;
+    margin: 0px 16px;
+    border-left: 1px solid var(--border-color);
+}
+/* header-with-search */
+.header-with-search{
+    height: var(--header-with-search-height);
+    display: flex;
+    align-items: center;
+}
+.header__logo{
+    width: 200px;
+}
+.header__logo-img{
+    width: 130px;
+}
+.header__search{
+    flex: 1;
+    background-color: var(--white-color);
+    height: 40px;
+    border-radius: 10px;
+}
+.header__cart{
+    width: 150px;
+    text-align: center;
+    margin-top: 3px;
+}
+.header__cart-icon{
+    color: var(--white-color);
+    font-size: 2.4rem;
+  
+}
