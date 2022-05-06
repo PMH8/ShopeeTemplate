@@ -12,12 +12,13 @@
 * {
     box-sizing: inherit;
 }
-
 html {
     font-size: 62.5%;
     line-height: 1.6rem;
     font-family: 'Roboto', sans-serif;
 }
+/* Responsive */
+
 
 .grid {
     width: 90%;
@@ -32,8 +33,26 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: -5px;
+    margin-left: -5px;
 }
-
+.grid__column-2{
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 16.667%;
+}
+.grid__column-2-5{
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 20%;
+}
+.grid__column-10{
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 83.333%;
+}
 /* Modal */
 @keyframes fadeIn {
     from {
@@ -118,4 +137,78 @@ html {
 .btn--with-icon {
     display: flex;
     align-items: center;
+}
+
+/* Selection */
+.select-input{
+    height: 36px;
+    padding: 0 12px;
+    min-width:200px;
+    border-radius: 3px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.select-input:hover .select-input__list{
+    display: block;
+}
+.select-input-label{
+    font-size: 1.4rem;
+}
+.select-input-icon{
+
+}
+.select-input__list{
+    position:absolute;
+    left: 0;
+    right: 0;
+    top: 70%;
+    list-style: none;
+    background-color: var(--white-color);
+    padding-left: 9px;
+    display: none;
+    animation: fadeIn ease-in 0.2s;
+    z-index: 1;
+}
+.select-input__item:hover .select-input__item-link{
+    color: var(--primary-color);
+}
+.select-input__item-link{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 6px 0;
+}
+/* pagination */
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+}
+.pagination-item{
+    margin: 0 10px;
+}
+.pagination-item__link{
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    
+}
+.pagination-item--active{
+    
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+.pagination-item--active a{
+    color: var(--white-color);
 }
