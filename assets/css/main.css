@@ -14,6 +14,7 @@
     list-style: none;
     padding-left: 0;
     margin: 4px 0 0 0;
+    align-items: center;
 }
 
 .header__navbar-item {
@@ -29,7 +30,10 @@
     margin-left: 10px;
     position: relative;
 }
-
+li.header__navbar-item__login,
+li.header__navbar-item__logout{
+    display: none;
+}
 .header__navbar-user:hover .header__navbar-user-menu {
     display: block;
 }
@@ -542,7 +546,7 @@
     z-index: 1;
     display: none;
     height: 400px;
-    overflow: auto;
+    overflow: unset;
 }
 
 .header__cart-list::before {
@@ -694,9 +698,9 @@
 
 .header__cart-view-cart {
 
-    float: right;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
     cursor: pointer;
     display: block;
     width: 40px;
