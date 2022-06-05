@@ -21,6 +21,8 @@
     margin: 4px;
     position: relative;
     min-width: 26px;
+    height: 32px;
+    line-height: 32px;
 
 }
 
@@ -30,8 +32,8 @@
     margin-left: 10px;
     position: relative;
 }
-li.header__navbar-item__login,
-li.header__navbar-item__logout{
+li.header__navbar-item__register,
+li.header__navbar-item__login{
     display: none;
 }
 .header__navbar-user:hover .header__navbar-user-menu {
@@ -114,6 +116,7 @@ li.header__navbar-item__logout{
 
 .header__navbar-item:hover .header__notify {
     display: block;
+    z-index: 3;
 }
 
 .header__navbar-item--has-qr:hover .header__qr {
@@ -310,12 +313,14 @@ li.header__navbar-item__logout{
 
 .header__notify-img {
     width: 30%;
-    object-fit: contain;
+    object-fit: scale-down;
+    object-position: center;
 }
 
 .header__notify-info {
     padding-top: 13px;
     margin-left: 12px;
+    width:62%;
 }
 
 .header__notify-name {
@@ -324,7 +329,12 @@ li.header__navbar-item__logout{
     color: var(--black-color);
     font-weight: 400;
     margin-left: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
 }
 
 .header__notify-descriotion {
@@ -333,11 +343,19 @@ li.header__navbar-item__logout{
     color: #756F6E;
     line-height: 1.6rem;
     margin-left: 15px;
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+ 
 
 }
 
 .header__notify-footer {
     text-align: center;
+    margin-top: 15px;
 }
 
 .header__notify-footer-btn {
@@ -348,7 +366,10 @@ li.header__navbar-item__logout{
     font-size: 1.4rem;
     padding: 6px;
 }
+.header__notify-footer-btn:hover{
+    color: var(--primary-color);
 
+}
 /* Authen Modal */
 .auth-form {
     border-radius: 5px;
@@ -399,7 +420,17 @@ li.header__navbar-item__logout{
 .auth-form__input:focus {
     border-color: #888;
 }
-
+label.error{
+    color: red;
+    font-size: 1.3rem;
+    padding: 10px 0px 0px 10px;
+    display: block;
+}
+.auth-form__show_password{
+    margin-top: 20px;
+    margin-left: 1px;
+    font-size: 1.5rem;
+}
 .auth-form__aside {
     margin-top: 18px;
 }
@@ -618,6 +649,7 @@ li.header__navbar-item__logout{
 .header__cart-list-item {
     list-style: none;
     padding-left: 0;
+    margin-top: 15px;
     margin-bottom: 20px;
 
 }
@@ -789,7 +821,7 @@ li.header__navbar-item__logout{
     /* left: 8%; */
     top: 100%;
     width: 200px;
-    height: 60px;
+    height: 80px;
     margin-top: 18px;
     padding-left: 0px;
     background-color: var(--white-color);
@@ -1028,8 +1060,9 @@ li.header__navbar-item__logout{
 }
 .home-product-item__img{
    padding-top: 100%;
-   background-size: contain;
+   background-size: cover;
    background-position: center;
+   background-repeat: no-repeat;
 
 }
 .home-product-item__name{
